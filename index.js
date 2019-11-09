@@ -56,3 +56,16 @@ router.get('/clientes/:id?', (req, res) =>{
 router.delete('/clientes/:id', (req, res) =>{
     execSQLQuery('DELETE Clientes WHERE ID=' + parseInt(req.params.id), res);
 })
+
+//#######################################Adicionando registro no banco de Dados#######################################
+
+//Criando a rota para a pagina para adicionar um novo registro, neste caso serão passados parametros via URL para 
+//executar a adição do novo usuario dentro do banco de dados
+//o processo e bem parecido com todos os demais porem agora estaremos utilizando a clausula INSERT
+
+router.post('/clientes', (req, res) =>{
+    const id = parseInt(req.body.id);
+    const nome = req.body.nome.substring(0,150);
+    const cpf = req.body.cpf.substring(0,11);
+    execSQLQuery(`INSERT INTO Clientes(ID, Nome, CPF) VALUES(${id},'${nome}','${cpf}')`, res);
+})
