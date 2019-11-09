@@ -33,6 +33,8 @@ function execSQLQuery(sqlQry, res){
                .catch(err => res.json(err));
 }
 
+//#######################################Consultando no Banco de Dados#######################################
+
 //Criando a rota para a pagina Clientes  neste caso sera apresentados todos os clientes
 //Em seguida e chamado a função que ira executar a consulta dentro do banco de dados
 router.get('/clientes', (req, res) =>{
@@ -45,4 +47,12 @@ router.get('/clientes/:id?', (req, res) =>{
     let filter = '';
     if(req.params.id) filter = ' WHERE ID=' + parseInt(req.params.id);
     execSQLQuery('SELECT * FROM Clientes' + filter, res);
+})
+
+//#######################################Excluindo um item do Banco de Dados#######################################
+
+//Criando a rota para a pagina para exclusão do cliente estamos novamente passando o ID como parametro para executar a query
+//o processo e bem parecido com o de pesquisa porem a query e outra
+router.delete('/clientes/:id', (req, res) =>{
+    execSQLQuery('DELETE Clientes WHERE ID=' + parseInt(req.params.id), res);
 })
