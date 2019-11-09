@@ -7,6 +7,9 @@ var connStr = {
     connectionString: 'Driver=SQL Server;Server=GAB2;Database=testenode;Trusted_Connection=true;'
   };
 
+//Incluindo o ejs no codigo
+app.set('view engine', 'ejs');
+
 //fazendo a conexão global
 sql.connect(connStr)
    .then(conn => GLOBAL.conn = conn)

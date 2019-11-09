@@ -12,10 +12,19 @@ npm install -S mssql
 npm install msnodesqlv8
 
 //Este pacote serve para ir atualizando em tempo real a sua aplicação assim que as alterações forem detectadas
-npm install -g nodemon
+npm install  nodemon -g
 
 //Framework usado para criar as paginas customizadas  e sera utilizado para criar a API da aplicação
 npm install -S express body-parser
+npm install express
+
+//O EJS é uma engine de visualização, com ele conseguimos de uma maneira fácil e simples transportar dados 
+//do back-end para o front-end, basicamente conseguimos utilizar códigos em javascript no html de nossas páginas
+// Site oficial para verificar o que e possivel fazer com o mesmo
+// https://www.npmjs.com/package/ejs
+//https://github.com/mde/ejs/releases/tag/v2.6.2
+
+npm install ejs
 
 ################################################## Programas para serem utilizados para testes ###################################################
 
